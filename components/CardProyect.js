@@ -6,7 +6,7 @@ export default function CardProyect({ project }) {
     <div className="group relative overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 transition-all hover:shadow-lg hover:border-zinc-300 dark:hover:border-zinc-700">
       {/* Imagen del proyecto */}
       {project.image && (
-        <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700">
+        <div className="relative h-40 sm:h-48 w-full overflow-hidden bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700">
           <Image
             src={project.image}
             alt={project.title}
@@ -17,23 +17,23 @@ export default function CardProyect({ project }) {
       )}
 
       {/* Contenido */}
-      <div className="p-5">
+      <div className="p-3 sm:p-5">
         {/* Título */}
-        <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2 line-clamp-1">
+        <h3 className="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2 line-clamp-1">
           {project.title}
         </h3>
 
         {/* Descripción */}
-        <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4 line-clamp-2">
+        <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-4 line-clamp-2">
           {project.description}
         </p>
 
         {/* Tecnologías */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className="inline-block px-2 py-1 text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded"
+              className="inline-block px-2 py-0.5 sm:py-1 text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded"
             >
               {tech}
             </span>
@@ -41,24 +41,26 @@ export default function CardProyect({ project }) {
         </div>
 
         {/* Links */}
-        <div className="flex gap-3 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+        <div className="flex gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-zinc-200 dark:border-zinc-800">
           {project.link ? (
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors"
+              className="flex-1 inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors"
             >
-              <FiExternalLink size={16} />
-              Ver
+              <FiExternalLink size={14} className="hidden sm:block" />
+              <FiExternalLink size={12} className="block sm:hidden" />
+              <span className="hidden xs:inline">Ver</span>
             </a>
           ) : (
             <button
               disabled
-              className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded bg-zinc-300 dark:bg-zinc-700 text-zinc-500 dark:text-zinc-500 cursor-not-allowed opacity-50"
+              className="flex-1 inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded bg-zinc-300 dark:bg-zinc-700 text-zinc-500 dark:text-zinc-500 cursor-not-allowed opacity-50"
             >
-              <FiExternalLink size={16} />
-              Ver
+              <FiExternalLink size={14} className="hidden sm:block" />
+              <FiExternalLink size={12} className="block sm:hidden" />
+              <span className="hidden xs:inline">Ver</span>
             </button>
           )}
           {project.github ? (
@@ -66,18 +68,20 @@ export default function CardProyect({ project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+              className="flex-1 inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
             >
-              <FiGithub size={16} />
-              GitHub
+              <FiGithub size={14} className="hidden sm:block" />
+              <FiGithub size={12} className="block sm:hidden" />
+              <span className="hidden xs:inline">GitHub</span>
             </a>
           ) : (
             <button
               disabled
-              className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded border border-zinc-300 dark:border-zinc-700 text-zinc-400 dark:text-zinc-600 cursor-not-allowed opacity-50"
+              className="flex-1 inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded border border-zinc-300 dark:border-zinc-700 text-zinc-400 dark:text-zinc-600 cursor-not-allowed opacity-50"
             >
-              <FiGithub size={16} />
-              GitHub
+              <FiGithub size={14} className="hidden sm:block" />
+              <FiGithub size={12} className="block sm:hidden" />
+              <span className="hidden xs:inline">GitHub</span>
             </button>
           )}
         </div>

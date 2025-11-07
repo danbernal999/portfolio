@@ -44,7 +44,7 @@ export default function TechSkillsCarousel() {
       
       {/* First Row - Backend */}
       <ul 
-        className="flex gap-8 py-4 min-w-max animate-scroll"
+        className="flex gap-4 sm:gap-6 md:gap-8 py-3 sm:py-4 min-w-max animate-scroll"
         style={{
           maskImage: "linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%)"
@@ -55,10 +55,10 @@ export default function TechSkillsCarousel() {
           return (
             <li
               key={idx}
-              className="flex-shrink-0 px-5 py-3 rounded-full transition-all duration-300 whitespace-nowrap backdrop-blur-sm flex items-center justify-center"
+              className="flex-shrink-0 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-full transition-all duration-300 whitespace-nowrap backdrop-blur-sm flex items-center justify-center"
               title={tech.name}
             >
-              <IconComponent className={`text-4xl ${tech.color}`} />
+              <IconComponent className={`text-2xl sm:text-3xl md:text-4xl ${tech.color}`} />
             </li>
           );
         })}
@@ -66,7 +66,7 @@ export default function TechSkillsCarousel() {
 
       {/* Second Row - Frontend - Reverse direction */}
       <ul 
-        className="flex gap-8 py-4 min-w-max animate-scroll-reverse mt-5"
+        className="flex gap-4 sm:gap-6 md:gap-8 py-3 sm:py-4 min-w-max animate-scroll-reverse mt-3 sm:mt-5"
         style={{
           maskImage: "linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%)"
@@ -77,10 +77,10 @@ export default function TechSkillsCarousel() {
           return (
             <li
               key={idx}
-              className="flex-shrink-0 px-6 py-3 rounded-full transition-all duration-300 whitespace-nowrap backdrop-blur-sm flex items-center justify-center"
+              className="flex-shrink-0 px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 whitespace-nowrap backdrop-blur-sm flex items-center justify-center"
               title={tech.name}
             >
-              <IconComponent className={`text-4xl ${tech.color}`} />
+              <IconComponent className={`text-2xl sm:text-3xl md:text-4xl ${tech.color}`} />
             </li>
           );
         })}
